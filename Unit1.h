@@ -16,16 +16,21 @@ __published:	// IDE-managed Components
         TShape *tlo;
         TImage *b;
         TTimer *Timer_pilka;
-        TImage *p;
-        TTimer *lewo;
-        TTimer *prawo;
+        TTimer *pr_w_dol;
+        TTimer *pr_w_gore;
+        TImage *pl;
+        TImage *pr;
+        TTimer *pl_w_gore;
+        TTimer *pl_w_dol;
         void __fastcall Timer_pilkaTimer(TObject *Sender);
-        void __fastcall lewoTimer(TObject *Sender);
-        void __fastcall prawoTimer(TObject *Sender);
+        void __fastcall pr_w_dolTimer(TObject *Sender);
+        void __fastcall pr_w_goreTimer(TObject *Sender);
         void __fastcall FormKeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
         void __fastcall FormKeyUp(TObject *Sender, WORD &Key,
           TShiftState Shift);
+        void __fastcall pl_w_goreTimer(TObject *Sender);
+        void __fastcall pl_w_dolTimer(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);

@@ -12,9 +12,6 @@ int x = -8;
 int y = -8;
 
 
-
-int do_wygranej = 12;
-
 //bool kolizja(TImage * pilka, TImage * cegla)
 //{
  //       if ((pilka->Left >= cegla->Left - pilka->Width) &&
@@ -45,21 +42,24 @@ void __fastcall TForm1::Timer_pilkaTimer(TObject *Sender)
      //odbij od gornej sciany
      if (b->Top-5 <= tlo->Top) y = -y;
      //odbij od dolnej sciany
-     if (b->Height+5 >= tlo->Height) y=-y;
+     if (b->Top + b->Height >= tlo->Top + tlo->Height) y=-y;
+
+     if (b->Left-5 <= tlo->Left) x = -x;
+     if (b->Left+ b-> Width+5 >= tlo->Width) x = -x;
 
      //skucha
-     if (b->Top >= p->Top + p->Height + 15)
-     {
-        Timer_pilka->Enabled = false;
-        b->Visible = false;
+     //if (b->Top >= p->Top + p->Height + 15)
+     //{
+     //   Timer_pilka->Enabled = false;
+     //   b->Visible = false;
         //Button1->Caption = "Pora¿ka! Jeszcze raz?";
         //Button1->Visible = true;
-     } else if ((b->Left > p->Left - b->Width/2) &&
-                (b->Left < p->Left + p->Width) &&
-                (b->Top + b->Height > p->Top))
-     {
-        if (y > 0) y = -y;
-     }
+     //} else if ((b->Left > p->Left - b->Width/2) &&
+      //          (b->Left < p->Left + p->Width) &&
+        //        (b->Top + b->Height > p->Top))
+     //{
+       // if (y > 0) y = -y;
+     //}
 }
 //---------------------------------------------------------------------------
 
@@ -67,31 +67,48 @@ void __fastcall TForm1::Timer_pilkaTimer(TObject *Sender)
 
 
 
-void __fastcall TForm1::lewoTimer(TObject *Sender)
+void __fastcall TForm1::pr_w_dolTimer(TObject *Sender)
 {
-        if (p->Left > 10) p->Left -= 10;
+        if (pr->Top + pr->Height < tlo->Top + tlo->Height - 20) pr->Top += 10;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::prawoTimer(TObject *Sender)
+void __fastcall TForm1::pr_w_goreTimer(TObject *Sender)
 {
-        if (p->Left  + p->Width < tlo->Width - 10) p->Left += 10;
+        if (pr->Top > 10) pr->Top -= 10;
+
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
      TShiftState Shift)
 {
-        if (Key == VK_LEFT) lewo->Enabled = true;
-        if (Key == VK_RIGHT) prawo->Enabled = true;
+        if (Key == VK_UP) pr_w_gore->Enabled = true;
+        if (Key == VK_DOWN) pr_w_dol->Enabled = true;
+        if (Key == 'A') pl_w_gore->Enabled = true;
+        if (Key == 'Z') pl_w_dol->Enabled = true;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::FormKeyUp(TObject *Sender, WORD &Key,
      TShiftState Shift)
 {
-       if (Key == VK_LEFT) lewo->Enabled = false;
-       if (Key == VK_RIGHT) prawo->Enabled = false;
+       if (Key == VK_UP) pr_w_gore->Enabled = false;
+       if (Key == VK_DOWN) pr_w_dol->Enabled = false;
+       if (Key == 'A') pl_w_gore->Enabled = false;
+       if (Key == 'Z') pl_w_dol->Enabled = false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::pl_w_goreTimer(TObject *Sender)
+{
+       if (pl->Top > 10) pl->Top -= 10;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::pl_w_dolTimer(TObject *Sender)
+{
+       if (pl->Top + pl->Height < tlo->Top + tlo->Height - 20) pl->Top += 10;
 }
 //---------------------------------------------------------------------------
 
