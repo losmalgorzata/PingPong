@@ -25,8 +25,8 @@ object Form1: TForm1
     Brush.Color = clActiveCaption
   end
   object b: TImage
-    Left = 24
-    Top = 24
+    Left = 411
+    Top = 214
     Width = 32
     Height = 32
     AutoSize = True
@@ -531,10 +531,10 @@ object Form1: TForm1
     Transparent = True
   end
   object Timer_pilka: TTimer
-    Interval = 15
+    Interval = 20
     OnTimer = Timer_pilkaTimer
-    Left = 64
-    Top = 24
+    Left = 416
+    Top = 184
   end
   object pr_w_dol: TTimer
     Enabled = False

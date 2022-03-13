@@ -32,8 +32,6 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
-
-//TO DOBRZE
 void __fastcall TForm1::Timer_pilkaTimer(TObject *Sender)
 {
      b->Left += x;
@@ -48,18 +46,18 @@ void __fastcall TForm1::Timer_pilkaTimer(TObject *Sender)
      if (b->Left+ b-> Width+5 >= tlo->Width) x = -x;
 
      //skucha
-     //if (b->Top >= p->Top + p->Height + 15)
-     //{
-     //   Timer_pilka->Enabled = false;
-     //   b->Visible = false;
+     if (b->Left <= pl->Left - 15)
+     {
+        Timer_pilka->Enabled = false;
+        b->Visible = false;
         //Button1->Caption = "Pora¿ka! Jeszcze raz?";
         //Button1->Visible = true;
-     //} else if ((b->Left > p->Left - b->Width/2) &&
-      //          (b->Left < p->Left + p->Width) &&
-        //        (b->Top + b->Height > p->Top))
-     //{
-       // if (y > 0) y = -y;
-     //}
+     } else if ((b->Top > pl->Top - b->Height/2) &&
+                (b->Top < pl->Top + pl->Height) &&
+                (b->Left < pl->Left + pl->Width))
+        {
+               if (x < 0) x = -x;
+        }
 }
 //---------------------------------------------------------------------------
 
