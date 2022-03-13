@@ -531,10 +531,10 @@ object Form1: TForm1
     Transparent = True
   end
   object Timer_pilka: TTimer
-    Interval = 100
+    Interval = 20
     OnTimer = Timer_pilkaTimer
-    Left = 64
-    Top = 24
+    Left = 416
+    Top = 184
   end
   object pr_w_dol: TTimer
     Enabled = False

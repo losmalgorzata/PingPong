@@ -46,17 +46,17 @@ void __fastcall TForm1::Timer_pilkaTimer(TObject *Sender)
      if (b->Left+ b-> Width+5 >= tlo->Width) x = -x;
 
      //skucha
-     if (b->Left <= pl->Left + 15)
+     if (b->Left <= pl->Left - 15)
      {
         Timer_pilka->Enabled = false;
-        //b->Visible = false;
+        b->Visible = false;
         //Button1->Caption = "Pora¿ka! Jeszcze raz?";
         //Button1->Visible = true;
-     } else if ((b->Top + b->Height > pl->Top - b->Height/2) &&
+     } else if ((b->Top > pl->Top - b->Height/2) &&
                 (b->Top < pl->Top + pl->Height) &&
-                (b->Left + b->Width > pl->Left))
+                (b->Left < pl->Left + pl->Width))
         {
-                if (x > 0) x = -x;
+               if (x < 0) x = -x;
         }
 }
 //---------------------------------------------------------------------------
