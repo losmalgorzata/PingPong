@@ -11,20 +11,6 @@ TForm1 *Form1;
 int x = -8;
 int y = -8;
 
-
-//bool kolizja(TImage * pilka, TImage * cegla)
-//{
- //       if ((pilka->Left >= cegla->Left - pilka->Width) &&
-   //         (pilka->Left <= cegla->Left + cegla->Width) &&
-     //       (pilka->Top >= cegla->Top - pilka->Height) &&
-       //     (pilka->Top <= cegla->Top + cegla->Height))
-         //   {
-           //     return true;
-            //} else {
-              //  return false;
-            //}
-//}
-
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
         : TForm(Owner)
@@ -41,9 +27,6 @@ void __fastcall TForm1::Timer_pilkaTimer(TObject *Sender)
      if (b->Top-5 <= tlo->Top) y = -y;
      //odbij od dolnej sciany
      if (b->Top + b->Height >= tlo->Top + tlo->Height) y=-y;
-
-     if (b->Left-5 <= tlo->Left) x = -x;
-     if (b->Left+ b-> Width+5 >= tlo->Width) x = -x;
 
      //skucha
      if ((b->Left <= pl->Left - 15) || (b->Left + b->Width > pr->Left + pr->Width))
@@ -66,10 +49,6 @@ void __fastcall TForm1::Timer_pilkaTimer(TObject *Sender)
 
 }
 //---------------------------------------------------------------------------
-
-
-
-
 
 void __fastcall TForm1::pr_w_dolTimer(TObject *Sender)
 {

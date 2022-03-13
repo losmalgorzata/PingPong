@@ -46,7 +46,7 @@ void __fastcall TForm1::Timer_pilkaTimer(TObject *Sender)
      if (b->Left+ b-> Width+5 >= tlo->Width) x = -x;
 
      //skucha
-     if (b->Left <= pl->Left - 15)
+     if ((b->Left <= pl->Left - 15) || (b->Left + b->Width > pr->Left + pr->Width))
      {
         Timer_pilka->Enabled = false;
         b->Visible = false;
@@ -57,7 +57,13 @@ void __fastcall TForm1::Timer_pilkaTimer(TObject *Sender)
                 (b->Left < pl->Left + pl->Width))
         {
                if (x < 0) x = -x;
+        } else if ((b->Top > pr->Top - b->Height/2) &&
+                   (b->Top < pr->Top + pr->Height) &&
+                   (b->Left + b->Width > pr->Left))
+        {
+               if (x > 0) x = -x;
         }
+
 }
 //---------------------------------------------------------------------------
 
