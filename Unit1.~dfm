@@ -550,4 +550,18 @@ object Form1: TForm1
     Left = 784
     Top = 144
   end
+  object pl_w_gore: TTimer
+    Enabled = False
+    Interval = 15
+    OnTimer = pl_w_goreTimer
+    Left = 32
+    Top = 144
+  end
+  object pl_w_dol: TTimer
+    Enabled = False
+    Interval = 15
+    OnTimer = pl_w_dolTimer
+    Left = 24
+    Top = 296
+  end
 end

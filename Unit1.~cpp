@@ -85,6 +85,8 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 {
         if (Key == VK_UP) pr_w_gore->Enabled = true;
         if (Key == VK_DOWN) pr_w_dol->Enabled = true;
+        if (Key == 'A') pl_w_gore->Enabled = true;
+        if (Key == 'Z') pl_w_dol->Enabled = true;
 }
 //---------------------------------------------------------------------------
 
@@ -93,6 +95,20 @@ void __fastcall TForm1::FormKeyUp(TObject *Sender, WORD &Key,
 {
        if (Key == VK_UP) pr_w_gore->Enabled = false;
        if (Key == VK_DOWN) pr_w_dol->Enabled = false;
+       if (Key == 'A') pl_w_gore->Enabled = false;
+       if (Key == 'Z') pl_w_dol->Enabled = false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::pl_w_goreTimer(TObject *Sender)
+{
+       if (pl->Top > 10) pl->Top -= 10;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::pl_w_dolTimer(TObject *Sender)
+{
+       if (pl->Top + pl->Height < tlo->Top + tlo->Height - 20) pl->Top += 10;
 }
 //---------------------------------------------------------------------------
 
