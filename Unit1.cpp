@@ -11,6 +11,9 @@ TForm1 *Form1;
 int x = -8;
 int y = -8;
 
+int odbicia_lewego = 0;
+int odbicia_prawego = 0;
+
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
         : TForm(Owner)
@@ -32,20 +35,24 @@ void __fastcall TForm1::Timer_pilkaTimer(TObject *Sender)
      if ((b->Left <= pl->Left - 15) || (b->Left + b->Width > pr->Left + pr->Width))
      {
         Timer_pilka->Enabled = false;
-        b->Visible = false;
-        Button1->Caption = "Pora¿ka! Jeszcze raz?";
+        b->Visible = false; Button1->Caption = "Wynik: " + IntToStr(odbicia_lewego) + ":" + IntToStr(odbicia_prawego);
         Button1->Visible = true;
      } else if ((b->Top > pl->Top - b->Height/2) &&
                 (b->Top < pl->Top + pl->Height) &&
                 (b->Left < pl->Left + pl->Width))
         {
                if (x < 0) x = -x;
+               //liczenie punktow gracza lewego
+               odbicia_lewego++;
         } else if ((b->Top > pr->Top - b->Height/2) &&
                    (b->Top < pr->Top + pr->Height) &&
                    (b->Left + b->Width > pr->Left))
         {
                if (x > 0) x = -x;
+               //liczenie punktow gracza prawego
+               odbicia_prawego++;
         }
+
 
 }
 //---------------------------------------------------------------------------
