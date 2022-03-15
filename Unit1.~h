@@ -25,6 +25,7 @@ __published:	// IDE-managed Components
         TButton *Button1;
         TLabel *Label1;
         TButton *Button2;
+        TButton *Button3;
         void __fastcall Timer_pilkaTimer(TObject *Sender);
         void __fastcall pr_w_dolTimer(TObject *Sender);
         void __fastcall pr_w_goreTimer(TObject *Sender);
@@ -35,6 +36,7 @@ __published:	// IDE-managed Components
         void __fastcall pl_w_goreTimer(TObject *Sender);
         void __fastcall pl_w_dolTimer(TObject *Sender);
         void __fastcall Button2Click(TObject *Sender);
+        void __fastcall Button3Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);

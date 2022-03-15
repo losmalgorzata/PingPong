@@ -4,6 +4,7 @@
 #pragma hdrstop
 
 #include "Unit1.h"
+#include "mmsystem.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -13,6 +14,8 @@ int y = -8;
 
 int odbicia_lewego = 0;
 int odbicia_prawego = 0;
+
+bool dzwiek = true;
 
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
@@ -37,11 +40,15 @@ void __fastcall TForm1::Timer_pilkaTimer(TObject *Sender)
         Timer_pilka->Enabled = false;
         b->Visible = false; Button1->Caption = "Wynik: " + IntToStr(odbicia_lewego) + ":" + IntToStr(odbicia_prawego);
         Button1->Visible = true;
+
+        if (dzwiek == true) sndPlaySound("snd/koniec.wav", SND_ASYNC);
+
      } else if ((b->Top > pl->Top - b->Height/2) &&
                 (b->Top < pl->Top + pl->Height) &&
                 (b->Left < pl->Left + pl->Width))
         {
                if (x < 0) x = -x;
+               if (dzwiek == true) sndPlaySound("snd/d3.wav", SND_ASYNC);
                //liczenie punktow gracza lewego
                odbicia_lewego++;
         } else if ((b->Top > pr->Top - b->Height/2) &&
@@ -49,6 +56,7 @@ void __fastcall TForm1::Timer_pilkaTimer(TObject *Sender)
                    (b->Left + b->Width > pr->Left))
         {
                if (x > 0) x = -x;
+               if (dzwiek == true) sndPlaySound("snd/d4.wav", SND_ASYNC);
                //liczenie punktow gracza prawego
                odbicia_prawego++;
         }
@@ -104,7 +112,16 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 {
         Button2->Visible = false;
         Label1->Visible = false;
-        Timer_pilka->Enabled = true;        
+        Timer_pilka->Enabled = true;
+        if (dzwiek == true) sndPlaySound("snd/start.wav", SND_ASYNC);
+        Button3->Visible = false;
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+        dzwiek = false;
 }
 //---------------------------------------------------------------------------
 
