@@ -546,8 +546,8 @@ object Form1: TForm1
     Transparent = True
   end
   object Button1: TButton
-    Left = 277
-    Top = 384
+    Left = 269
+    Top = 80
     Width = 321
     Height = 49
     Caption = 'Pora'#380'ka. Jeszcze raz?'

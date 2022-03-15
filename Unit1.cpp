@@ -32,7 +32,7 @@ void __fastcall TForm1::Timer_pilkaTimer(TObject *Sender)
      if (b->Top + b->Height >= tlo->Top + tlo->Height) y=-y;
 
      //skucha
-     if ((b->Left <= pl->Left - 15) || (b->Left + b->Width > pr->Left + pr->Width))
+     if ((b->Left <= pl->Left) || (b->Left + b->Width > pr->Left + pr->Width))
      {
         Timer_pilka->Enabled = false;
         b->Visible = false; Button1->Caption = "Wynik: " + IntToStr(odbicia_lewego) + ":" + IntToStr(odbicia_prawego);
@@ -52,8 +52,6 @@ void __fastcall TForm1::Timer_pilkaTimer(TObject *Sender)
                //liczenie punktow gracza prawego
                odbicia_prawego++;
         }
-
-
 }
 //---------------------------------------------------------------------------
 
