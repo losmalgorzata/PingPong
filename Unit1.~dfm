@@ -550,7 +550,7 @@ object Form1: TForm1
     Top = 80
     Width = 321
     Height = 49
-    Caption = 'Pora'#380'ka. Jeszcze raz?'
+    Caption = 'wynik'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -31

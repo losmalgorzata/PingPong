@@ -561,11 +561,11 @@ object Form1: TForm1
     Visible = False
   end
   object Button2: TButton
-    Left = 392
+    Left = 344
     Top = 320
-    Width = 75
+    Width = 161
     Height = 41
-    Caption = 'OK'
+    Caption = 'Nowa gra'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -31
@@ -574,6 +574,21 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 1
     OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 680
+    Top = 392
+    Width = 153
+    Height = 41
+    Caption = 'Wylacz dzwiek'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clAqua
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+    OnClick = Button3Click
   end
   object Timer_pilka: TTimer
     Enabled = False
