@@ -48,7 +48,7 @@ void __fastcall TForm1::Timer_pilkaTimer(TObject *Sender)
                 (b->Left < pl->Left + pl->Width))
         {
                if (x < 0) x = -x;
-               if (dzwiek == true) sndPlaySound("snd/d3.wav", SND_ASYNC);
+               if (dzwiek == true) sndPlaySound("snd/d2.wav", SND_ASYNC);
                //liczenie punktow gracza lewego
                odbicia_lewego++;
         } else if ((b->Top > pr->Top - b->Height/2) &&
@@ -56,7 +56,7 @@ void __fastcall TForm1::Timer_pilkaTimer(TObject *Sender)
                    (b->Left + b->Width > pr->Left))
         {
                if (x > 0) x = -x;
-               if (dzwiek == true) sndPlaySound("snd/d4.wav", SND_ASYNC);
+               if (dzwiek == true) sndPlaySound("snd/d2.wav", SND_ASYNC);
                //liczenie punktow gracza prawego
                odbicia_prawego++;
         }
@@ -113,7 +113,7 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
         Button2->Visible = false;
         Label1->Visible = false;
         Timer_pilka->Enabled = true;
-        if (dzwiek == true) sndPlaySound("snd/start.wav", SND_ASYNC);
+        if (dzwiek == true) sndPlaySound("snd/d1.wav", SND_ASYNC);
         Button3->Visible = false;
 }
 //---------------------------------------------------------------------------
