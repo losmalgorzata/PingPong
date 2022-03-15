@@ -33,8 +33,8 @@ void __fastcall TForm1::Timer_pilkaTimer(TObject *Sender)
      {
         Timer_pilka->Enabled = false;
         b->Visible = false;
-        //Button1->Caption = "Pora¿ka! Jeszcze raz?";
-        //Button1->Visible = true;
+        Button1->Caption = "Pora¿ka! Jeszcze raz?";
+        Button1->Visible = true;
      } else if ((b->Top > pl->Top - b->Height/2) &&
                 (b->Top < pl->Top + pl->Height) &&
                 (b->Left < pl->Left + pl->Width))
@@ -92,6 +92,14 @@ void __fastcall TForm1::pl_w_goreTimer(TObject *Sender)
 void __fastcall TForm1::pl_w_dolTimer(TObject *Sender)
 {
        if (pl->Top + pl->Height < tlo->Top + tlo->Height - 20) pl->Top += 10;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+        Button2->Visible = false;
+        Label1->Visible = false;
+        Timer_pilka->Enabled = true;        
 }
 //---------------------------------------------------------------------------
 

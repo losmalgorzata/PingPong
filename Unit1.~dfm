@@ -530,6 +530,49 @@ object Form1: TForm1
       000000000000000000000000000000FFFFFF}
     Transparent = True
   end
+  object Label1: TLabel
+    Left = 339
+    Top = 24
+    Width = 177
+    Height = 46
+    Caption = 'Zagrajmy!'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -40
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    Transparent = True
+  end
+  object Button1: TButton
+    Left = 277
+    Top = 384
+    Width = 321
+    Height = 49
+    Caption = 'Pora'#380'ka. Jeszcze raz?'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -31
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    Visible = False
+  end
+  object Button2: TButton
+    Left = 392
+    Top = 320
+    Width = 75
+    Height = 41
+    Caption = 'OK'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -31
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+  end
   object Timer_pilka: TTimer
     Interval = 20
     OnTimer = Timer_pilkaTimer
