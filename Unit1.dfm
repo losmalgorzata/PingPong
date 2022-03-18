@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 340
+  Left = 244
   Top = 196
-  Width = 870
-  Height = 500
+  Width = 879
+  Height = 552
   Caption = 'Form1'
   Color = clBtnFace
   UseDockManager = True
@@ -15,13 +15,16 @@ object Form1: TForm1
   OldCreateOrder = False
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
+  DesignSize = (
+    863
+    513)
   PixelsPerInch = 96
   TextHeight = 13
   object tlo: TShape
     Left = 0
     Top = 0
-    Width = 854
-    Height = 461
+    Width = 863
+    Height = 513
     Align = alClient
     Brush.Color = clActiveCaption
   end
@@ -545,24 +548,58 @@ object Form1: TForm1
     ParentFont = False
     Transparent = True
   end
-  object Button1: TButton
-    Left = 269
-    Top = 80
-    Width = 321
-    Height = 49
-    Caption = 'wynik'
+  object Label2: TLabel
+    Left = 253
+    Top = 72
+    Width = 369
+    Height = 41
+    Alignment = taCenter
+    Anchors = []
+    AutoSize = False
+    Caption = '<- punkt dla gracza lewego'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -31
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 0
+    Visible = False
+  end
+  object Label3: TLabel
+    Left = 344
+    Top = 120
+    Width = 177
+    Height = 36
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'wynik 10:10'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -31
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    Visible = False
+  end
+  object Label4: TLabel
+    Left = 304
+    Top = 168
+    Width = 251
+    Height = 36
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Liczba odbic: 100 '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -31
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
     Visible = False
   end
   object Button2: TButton
     Left = 344
-    Top = 320
+    Top = 368
     Width = 161
     Height = 41
     Caption = 'Nowa gra'
@@ -572,7 +609,7 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 0
     OnClick = Button2Click
   end
   object Button3: TButton
@@ -587,8 +624,24 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 2
+    TabOrder = 1
     OnClick = Button3Click
+  end
+  object Button1: TButton
+    Left = 280
+    Top = 312
+    Width = 289
+    Height = 49
+    Caption = 'Nowa runda'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -31
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    Visible = False
+    OnClick = Button1Click
   end
   object Timer_pilka: TTimer
     Enabled = False
